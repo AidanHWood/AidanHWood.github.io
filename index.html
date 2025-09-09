@@ -38,43 +38,105 @@
     </section>
   </main>
     <section id="blog" class="section">
-      <div class="terminal-wrapper">
-        <span id="terminal-text" class="glow-text"></span><span id="hash" class="cursor" style="display:none">#</span>
-      </div>
-      <section id="cyber-blog" class="section">
-        <h2>Cyber Exploits</h2>
-        <div class="card-navigation">
-          <button id="prev-day">Previous Day</button>
-          <span id="current-date"></span>
-          <button id="next-day">Next Day</button>
+        <div class="terminal-wrapper">
+            <span id="terminal-text" class="glow-text"></span><span id="hash" class="cursor" style="display:none">#</span>
         </div>
-        <div id="cards-container" class="cards-container"></div>
-      </section>
 
+        <section id="cyber-blog" class="section">
+            <h2 id="cyber_title">Cyber Exploits</h2>
 
-  
+            <div class="card-navigation">
+            <button id="prev-day">Previous Day</button>
+            <span id="current-date"></span>
+            <button id="next-day">Next Day</button>
+            </div>
+
+            <div id="cards-container" class="cards-container">
+            <!-- Cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Modal / Detail view for clicked card -->
+        <div id="exploit-modal" class="exploit-modal" style="display:none;">
+            <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-severity"></p>
+            </div>
+        </div>
+    </section>
       <div id="cards-container" class="cards-container">
         <!-- Cards will be dynamically inserted here -->
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <p>Here are some projects I’ve worked on. (Add repos, links, screenshots later.)</p>
+   <section id="projects" class="section">
+    <h2>Projects</h2> 
+      <!-- First project with video -->
+      <div class="project-with-video">
+        <div class="project-video">
+          <video autoplay muted loop playsinline>
+            <source src="testVid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="project-card-item right-aligned">
+          <div class="project-card-description">
+            <strong>Portfolio Website</strong><br><br>
+            For this project, I trained a custom YOLOv8 object detection model on a small, self-curated dataset. Using Label Studio, I annotated images and wrote Python scripts to automate tasks like file organization and filename cleanup.<br><br>
+
+            The model was trained over multiple epochs and tested live via a webcam, demonstrating real-time object detection. Key results include:<br><br>
+
+            High accuracy: Orange (0.92), Grapefruit (0.86), Reece’s Pieces (0.94)<br>
+            Moderate accuracy: Croissant (0.84)<br>
+            Still tuning: Pineapple (~0.62)<br><br>
+
+            This project highlights my skills in dataset preparation, annotation, model training, evaluation, and live deployment.
+          </div>
+        </div>
+      </div>
+
+     <!-- Second row: two cards side by side -->
+      <div class="projects-cards-container" style="display: flex;gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%;">
+        <div class="project-card-item" style="flex: 1 1 45%; max-width: 800px; height: 400px;">
+          <div class="project-card-icon">🔒</div>
+          <div class="project-card-description">
+            <strong>Custom YOLOv8 Object Detection Model</strong><br><br>
+            I am active on <strong>HackerOne</strong> and <strong>Bugcrowd</strong>, exploring bug bounty programs and reporting security vulnerabilities. This demonstrates my hands-on cybersecurity experience and continuous learning in offensive security.
+          </div>
+        </div>
+
+        <div class="project-card-item" style="flex: 1 1 45%; max-width: 800px; height: 400px;">
+          <div class="project-card-icon">📡</div>
+          <div class="project-card-description">
+            <strong>Network Monitor</strong><br><br>
+            Monitoring network activity and highlighting suspicious traffic. Also active on <strong>HackerOne</strong> and <strong>Bugcrowd</strong>, showing practical experience in finding and reporting security issues.
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      <p>List your work experience, internships, or volunteering roles.</p>
-    </section>
+
+
 
     <section id="skills" class="section">
       <h2>Skills</h2>
-      <ul>
-        <li>Cybersecurity Fundamentals</li>
-        <li>Python, JavaScript, HTML, CSS</li>
-        <li>Linux & Networking</li>
-      </ul>
+      <div class="skills-cards-container">
+        <div class="skill-card-item">
+          <div class="skill-card-icon">🛡️</div>
+          <div class="skill-card-title">Cybersecurity Fundamentals</div>
+        </div>
+        <div class="skill-card-item">
+          <div class="skill-card-icon">💻</div>
+          <div class="skill-card-title">Programming (Python, JS, HTML, CSS)</div>
+        </div>
+        <div class="skill-card-item">
+          <div class="skill-card-icon">🐧</div>
+          <div class="skill-card-title">Linux & Networking</div>
+        </div>
+      </div>
     </section>
 
 

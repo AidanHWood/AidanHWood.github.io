@@ -71,7 +71,6 @@ nav a:hover::after {
   gap: 20px;           /* space between heading, paragraph, and buttons */
   padding: 80px 20px;
   text-align: center;
-  background-color: #111111; /* base color */
 
 }
 
@@ -109,7 +108,6 @@ nav a:hover::after {
   color: white;
 }
 
-/* Cyber Blog Terminal */
 .terminal-wrapper {
   position: absolute;    /* take it out of normal flow */
   top: 2%;              /* adjust this value to move it higher/lower */
@@ -182,11 +180,10 @@ form button:hover {
   position: relative;
   min-height: 600px;
 
-  /* gradient background only */
+
   background-image: linear-gradient(0deg, #1a252f, #111111);
 }
 
-/* fading border at bottom */
 #about.section::after {
   content: "";
   position: absolute;
@@ -226,7 +223,7 @@ form button:hover {
 
 
     #blog.section {
-     position: relative;
+    position: relative;
     min-height: 600px;
     background: #1F2C38;
 }
@@ -273,30 +270,201 @@ form button:hover {
   border: 4px solid white;
 }
 
+/* Cards Container */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 50px;
   justify-content: center;
   margin-top: 20px;
 }
 
+/* Individual Card */
 .card {
-  width: 250px;
-  padding: 20px;
-  border-radius: 8px;
-  border: 3px solid transparent;
-  background-color: #111111;
-  color: white;
+  background-color: #333333; /* light background */
+  border-radius: 10px;
+  padding: 12px 25px;
+  width: 250px; /* smaller width */
   cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 5px solid #ccc; /* default border */
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-.card.high { border-color: red; }
-.card.medium { border-color: orange; }
-.card.low { border-color: green; }
+/* Severity colors */
+.card.high { border-left-color: #e74c3c; }   /* red */
+.card.medium { border-left-color: #f1c40f; } /* yellow */
+.card.low { border-left-color: #2ecc71; }    /* green */
+
+/* Card content */
+.card .title {
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 6px;
+  color:red;
+}
+
+.card .description {
+  font-weight: bolder;
+  font-size: 14px;
+  color: white;
+}
+
+.card .date-label {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Modal Styling */
+.exploit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* dimmed background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #333; 
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin: 8px 0;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#cyber_title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-top: -5%;
+}
+
+.projects-cards-container {
+  display: flex;
+  width: 500px;
+  gap: 2rem; /* space between cards */
+}
+
+.project-with-video {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Space between video and card */
+  margin-bottom: 20px;
+}
+
+.project-video video {
+  width: 800px;
+  border-radius: 8px;
+}
+
+.project-card-item {
+  padding: 20px;
+  background: #333333;
+  border-radius: 10px;
+  border: red 0.5px solid;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.right-aligned {
+  display: flex;
+  flex-direction: column;      /* stack title and description vertically */
+  align-items: center;         /* horizontally center everything inside */
+  justify-content: flex-start; /* start from the top of the card */
+  width: 800px;
+  height: 450px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid red;
+
+  /* stick to right */
+  margin-left: auto;
+  margin-right: 5%;
+  text-align: center;          /* center text inside card */
+  font-size: larger;
+  font-weight: bolder;
+}
+
+
+.project-card-item:nth-child(odd) {
+  flex-direction: row; /* image/video on right */
+}
+
+.project-card-item:nth-child(even) {
+  flex-direction: row-reverse; /* image/video on left */
+}
+
+.project-card-content {
+  flex: 1; /* content takes available space */
+}
+
+
+
+
+/* Skills Cards */
+.skills-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.skill-card-item {
+  background-color: #333333; /* light green-ish background */
+  border-radius: 10px;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 0 8px red; /* subtle base glow */
+  text-align: center;
+  border: #A52A2A 0.5px solid;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.skill-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px red, 0 6px 12px rgba(0,0,0,0.15); /* stronger glow on hover */
+}
+
+.skill-card-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.skill-card-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
