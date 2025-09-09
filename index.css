@@ -1,133 +1,302 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  background: #1A252F;
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+/* Header + Navbar */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}header {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between; /* Push h1 to left, nav to right */
-    align-items: center; /* Center vertically */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-header h1 {
-    font-size: 6rem;
-    margin: 0;
-    position: relative;
-    display: inline-block;
-    color: #1AFF0D; /* Neon green all the time */
-    text-shadow:
-        0 0 5px #1AFF0D,
+  background: #111111;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-/* Underline effect */
-header h1::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px; /* Position just below text */
-    width: 0;
-    height: 3px;
-    background-color: #1AFF0D; /* Neon green */
-    transition: width 0.7s ease;
+.site-title {
+  font-size: 1.5rem;
+  color: red;
 }
 
-/* Animate underline on hover */
-header h1:hover::after {
-    width: 100%;
-}
-
-
-header h1:hover::after {
-    width: 100%; /* Full width underline */
-}
-
-/* Nav stays in a row */
 nav {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 100px;
 }
-
-/* Nav links styling */
-nav a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bolder;
-    font-size: large;
-    text-decoration: none;
-    color: #fff;
-    background-color: #555;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-
-
-header #terminal {
-    font-family: 'Montserrat', sans-serif;
-    float: left;
-    font-size: clamp(1.5rem, 5vw, 1rem);
-    margin: 0;
-    color: #FF3131; /* Bright red */
-    text-shadow:
-        0 0 2px #FF3131,
-        0 0 150px #FF3131;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-}
-
-
-
-
 
 nav a {
-    position: relative;
-    text-decoration: none;
-    color: #fff;           /* Button text color */
-    background-color: transparent; /* No background initially */
-    padding: 10px 75px;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: color 0.3s ease;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
 }
 
-/* Underline pseudo-element */
 nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;               /* Thickness of underline */
-    width: 0;                   /* Start hidden */
-    background-color: #FF3131;  /* Bright red */
-    transition: width 1s ease;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background: #FF3131;
+  transition: width 0.5s ease;
 }
 
-/* Animate underline on hover */
+nav a:hover {
+  color: #FF3131;
+}
+
 nav a:hover::after {
-    width: 100%; /* Expand underline fully */
+  width: 100%;
 }
 
+
+.section {
+  align-items: center; /* centers everything horizontally */
+  gap: 20px;           /* space between heading, paragraph, and buttons */
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #111111; /* base color */
+
+}
+
+/* Style the buttons */
+.section button {
+  font-weight: bold;
+  display: inline;
+  background-color: #111111;      /* dark grey background */
+  color: white;                   /* text color */
+  border: hidden;    /* red outline */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 25px;             /* added padding for better size */
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+
+
+.button-row {
+  display: flex;
+  margin-top: 10px;      /* place buttons in a row */
+  gap: 50px;               /* smaller gap between buttons */
+  margin-left: 16%;      /* shift the buttons left */
+}
+
+
+.button-row button:hover {
+  background-color: #A52A2A;
+  transform: translateY(-2px);
+}
+
+
+.section h2 {
+  color: white;
+}
+
+/* Cyber Blog Terminal */
+.terminal-wrapper {
+  position: absolute;    /* take it out of normal flow */
+  top: 2%;              /* adjust this value to move it higher/lower */
+  left: 50%;             /* center horizontally */
+  transform: translateX(-50%); /* center perfectly */
+  border-radius: 6px;
+}
+.glow-text {
+  font-size: xx-large;
+  font-family: monospace;
+  color: #FF3131; /* Red text */
+  text-shadow:
+    0 0 2px #FF3131;
+}
+
+#terminal {
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #FF3131;
+  text-shadow: 0 0 5px #FF3131, 0 0 20px #FF3131;
+}
 
 .cursor {
-    display: inline-block;
-    width: 1ch;
-    background-color: #1AFF0D;
-    animation: blink 0.7s steps(1) infinite;
-    margin-left: 2px;
+  font-size: xx-large;
+  display: inline-block;
+  width: 1ch;
+  color: #FF3131;
+  animation: blink 0.7s steps(1) infinite;
+  margin-left: 2px;
+  text-shadow:
+    0 0 2px #FF3131;
 }
 
 @keyframes blink {
-    0%, 50% { background-color: #1AFF0D; }
-    50%, 100% { background-color: transparent; }
+  0%, 50% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
+
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form textarea {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  background: #00bcd4;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0097a7;
+}
+
+#about.section {
+  position: relative;
+  min-height: 600px;
+
+  /* gradient background only */
+  background-image: linear-gradient(0deg, #1a252f, #111111);
+}
+
+/* fading border at bottom */
+#about.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* thickness of border */
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #FF3131 30%,
+    #FF3131 70%,
+    transparent
+  );
+}
+
+
+#about.section h2 {
+    font-size: 8vh;
+    margin-right: 50%;
+    margin-top: 3rem; 
+}
+#about p::before {
+    font-size: larger;
+    content: "~ ";  
+    color: red;    
+    font-weight: bold; 
+}
+
+#about.section p {
+    font-size: larger;
+    margin-right: 38%;
+}
+
+
+
+
+    #blog.section {
+     position: relative;
+    min-height: 600px;
+    background: #1F2C38;
+}
+    #skills.section {
+    background: #1A252F;
+}
+    #contact.section {
+    background: #1F2C38;
+}
+    #experience.section {
+    background: #1F2C38;
+}
+
+
+.profile-wrapper {
+  position: absolute;
+  top: 45%;           /* vertically center */
+  left: 70%;          /* 70% across the screen */
+  transform: translate(-50%, -50%); /* center the wrapper at this point */
+}
+
+/* Oval behind the photo */
+.background-oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 350px;
+  background: #A52A2A;
+  border-radius: 90% 20% 70% 80% / 80% 50% 60% 40%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  z-index: 1;  /* behind the photo */
+}
+
+/* Circular profile photo */
+.profile-photo {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%; /* moves the face slightly down */
+  z-index: 2; /* in front of oval */
+  border: 4px solid white;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-color: #111111;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.card.high { border-color: red; }
+.card.medium { border-color: orange; }
+.card.low { border-color: green; }

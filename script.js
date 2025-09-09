@@ -1,35 +1,83 @@
-const terminal = document.getElementById('terminal');
+const terminalText = document.getElementById('terminal-text');
+const hash = document.getElementById('hash');
 
-const part1 = "(root㉿MSI)-[/home/aidan/portfolio]"
-const part2 = " cd /Portfolio";
-let i = 0;
-let j = 0;
+if (terminalText) {
+  const text = "(root㉿MSI)-[/home/aidan/portfolio/cyber_blog]";
+  let i = 0;
 
-function typePart1() {
-    if (i < part1.length) {
-        terminal.textContent += part1.charAt(i);
-        i++;
-        setTimeout(typePart1, 50);
+  function typeText() {
+    if (i < text.length) {
+      terminalText.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeText, 50);
     } else {
-        flashHash();
+      // Once typing is complete, show blinking hash
+      hash.style.display = 'inline-block';
     }
+  }
+
+  typeText();
 }
 
-function flashHash(times = 10000000) {
-    let visible = true;
-    let count = 0;
+document.addEventListener("DOMContentLoaded", async () => {
+  const cardsContainer = document.getElementById("cards-container");
+  const currentDateSpan = document.getElementById("current-date");
+  const prevBtn = document.getElementById("prev-day");
+  const nextBtn = document.getElementById("next-day");
 
-    const interval = setInterval(() => {
-        terminal.textContent = terminal.textContent.slice(0, part1.length) + (visible ? '#' : ' ');
-        visible = !visible;
-        count++;
-        if (count >= times) {
-            clearInterval(interval);
-            terminal.textContent = part1 + ""
-            typePart2();
-        }
-    }, 300);
-}
+  let exploitData = {};
+  let currentDate;
 
-// Start typing
-typePart1();
+  // 1️⃣ Fetch JSON data dynamically
+  try {
+    const response = await fetch('exploits.json'); // adjust path if needed
+    exploitData = await response.json();
+    const dates = Object.keys(exploitData).sort().reverse();
+    currentDate = dates[0]; // start with latest date
+  } catch (err) {
+    console.error("Error loading JSON:", err);
+    return;
+  }
+
+  // 2️⃣ Function to render cards for a specific date
+  function renderCards(date) {
+    cardsContainer.innerHTML = ""; // clear existing
+    currentDateSpan.textContent = date;
+
+    const exploits = exploitData[date] || [];
+    exploits.forEach(exp => {
+      const card = document.createElement("div");
+      card.className = `card ${exp.severity}`;
+      card.innerHTML = `
+        <div class="title">${exp.title}</div>
+        <div class="description">${exp.description}</div>
+        <div class="date-label">${date}</div>
+      `;
+      cardsContainer.appendChild(card);
+    });
+  }
+
+  // 3️⃣ Navigation
+  function navigate(direction) {
+    const dates = Object.keys(exploitData).sort().reverse();
+    let index = dates.indexOf(currentDate);
+    if (direction === "prev" && index < dates.length - 1) index++;
+    if (direction === "next" && index > 0) index--;
+    currentDate = dates[index];
+    renderCards(currentDate);
+  }
+
+  prevBtn.addEventListener("click", () => navigate("prev"));
+  nextBtn.addEventListener("click", () => navigate("next"));
+
+  // Initial render
+  renderCards(currentDate);
+});
+
+
+// Contact form
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Thank you! Your message has been sent.");
+  this.reset();
+});
