@@ -30,6 +30,10 @@
         <button>Contact me</button>
         <button>Projects</button>
       </div>
+       <p class="inline-text">I'm currently a second year student reading computer science<br>
+        at the University of East Anglia, persuing a BSc Degree. <br>
+        I have a passion for Cyber Security and ethical hacking and am constantly <br>
+        improving my skills with coding projects, bug bounties or playing Capture the Flag's</p>
 
       <div class="profile-wrapper">
         <div class="background-oval"></div>
@@ -65,11 +69,10 @@
             <p id="modal-severity"></p>
             </div>
         </div>
-    </section>
       <div id="cards-container" class="cards-container">
         <!-- Cards will be dynamically inserted here -->
       </div>
-    </section>
+  </section>
 
    <section id="projects" class="section">
     <h2>Projects</h2> 
@@ -84,7 +87,7 @@
 
         <div class="project-card-item right-aligned">
           <div class="project-card-description">
-            <strong>Portfolio Website</strong><br><br>
+            <strong>Custom YOLOv8 Object Detection Model</strong><br><br>
             For this project, I trained a custom YOLOv8 object detection model on a small, self-curated dataset. Using Label Studio, I annotated images and wrote Python scripts to automate tasks like file organization and filename cleanup.<br><br>
 
             The model was trained over multiple epochs and tested live via a webcam, demonstrating real-time object detection. Key results include:<br><br>
@@ -98,59 +101,169 @@
         </div>
       </div>
 
-     <!-- Second row: two cards side by side -->
-      <div class="projects-cards-container" style="display: flex;gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%;">
-        <div class="project-card-item" style="flex: 1 1 45%; max-width: 800px; height: 400px;">
-          <div class="project-card-icon">🔒</div>
-          <div class="project-card-description">
-            <strong>Custom YOLOv8 Object Detection Model</strong><br><br>
-            I am active on <strong>HackerOne</strong> and <strong>Bugcrowd</strong>, exploring bug bounty programs and reporting security vulnerabilities. This demonstrates my hands-on cybersecurity experience and continuous learning in offensive security.
-          </div>
+        <!-- Second row: two cards side by side -->
+      <div class="projects-cards-container" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%;">
+      <div class="project-card-item" style="flex: 1 1 45%; max-width: 750px; height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="project-card-description">
+          <strong>Password Manager</strong><br><br>
+          A basic password manager application built in Python, designed to securely store and manage user credentials.<br><br>
+  The project utilizes encryption via the cryptography.fernet library to protect sensitive data, ensuring passwords are stored safely.<br><br>
+  The user interface is created with <strong>CustomTkinter</strong>, providing a clean and intuitive GUI for adding, viewing, and managing passwords.<br><br>
+  This project helped strengthen understanding of <strong>Python programming</strong>, <strong>data security practices</strong>, and GUI development.
         </div>
-
-        <div class="project-card-item" style="flex: 1 1 45%; max-width: 800px; height: 400px;">
-          <div class="project-card-icon">📡</div>
-          <div class="project-card-description">
-            <strong>Network Monitor</strong><br><br>
-            Monitoring network activity and highlighting suspicious traffic. Also active on <strong>HackerOne</strong> and <strong>Bugcrowd</strong>, showing practical experience in finding and reporting security issues.
-          </div>
-        </div>
+        <button class="find-on-gh1">View on Github</button>
       </div>
-    </section>
+
+      <div class="project-card-item" style="flex: 1 1 45%; max-width: 750px; height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="project-card-description">
+          <strong>The Portfolio Planner</strong><br><br>
+          A project created for my A-Level Computer Science course in 2024.<br><br>
+          Coded in Python and using various libraries such as Hashlib, customTkinter, matplotlib, and sqlite3.<br><br>
+          Also integrated the Google Calendar API to handle planning elements.<br><br>
+          Developed graphs to show trends in spending patterns, as well as login/signup pages with <strong>hashed and salted passwords</strong>.
+        </div>
+
+        <button class="find-on-gh1">View on Github</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="experience" class="section">
+  <h2>Experience</h2>
+  <div class="slideshow-container">
+    <div class="experience_card slide active">
+      <h2>Cybersecurity Blog</h2>
+      <p>Created a personal Cybersecurity blog to track new exploits and hacks</p><br>
+      <span>
+        Constantly keeping up with reading news articles and forums<br>
+        with the hopes to find new exploits to familiarise myself with<br>
+        and further my knowledge in Cybersecurity
+      </span>
+    </div>
+
+    <div class="experience_card slide">
+      <h2>Publicity and Kit Secretary</h2>
+      <p>Managed UEA Swimming and Water Polo's social media, branding and kit</p><br>
+      <span>
+        Responsible for creating quality digital content and marketing strategies
+        to promote the club.<br><br>
+        Utilising softwares such as Adobe Suite, Canva, Blender<br>
+        and different social media applications
+      </span>
+    </div>
+
+    <div class="experience_card slide">
+      <h2>Data Entry Specialist</h2>
+      <p>ETL Systems/Atlantic Microwave (Summer 2022)</p><br>
+      <span>
+        Responsible for transferring potential sales leads from old system (ACT)
+        onto Microsoft Dynamics<br><br>
+        Ensuring system changeover was completed smoothly
+      </span>
+    </div>
+
+    <button class="prev" onclick="changeSlide(-1)">❮</button>
+    <button class="next" onclick="changeSlide(1)">❯</button>
+  </div>
+</section>
 
 
 
 
-    <section id="skills" class="section">
+
+   <section id="skills" class="section">
       <h2>Skills</h2>
-      <div class="skills-cards-container">
-        <div class="skill-card-item">
-          <div class="skill-card-icon">🛡️</div>
-          <div class="skill-card-title">Cybersecurity Fundamentals</div>
+      <div class="skills-cards-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+
+        <!-- Skill Card 1 -->
+        <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
+          <div class="skill-card-header">
+            <div class="skill-card-icon">🛡️</div>
+            <div class="skill-card-title">Cybersecurity</div>
+            <div class="dropdown-icon">▼</div>
+          </div>
+          <ul class="skill-sublist">
+            <li>Ethical Hacking</li>
+            <li>Vulnerability Assessment</li>
+            <li>Bug Bounty Experience</li>
+            <li>SIEM Softwares</li>
+          </ul>
         </div>
-        <div class="skill-card-item">
-          <div class="skill-card-icon">💻</div>
-          <div class="skill-card-title">Programming (Python, JS, HTML, CSS)</div>
+
+        <!-- Skill Card 2 -->
+        <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
+          <div class="skill-card-header">
+            <div class="skill-card-icon">💻</div>
+            <div class="skill-card-title">Programming</div>
+            <div class="dropdown-icon">▼</div>
+          </div>
+          <ul class="skill-sublist">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>Data Structures & Algorithms</li>
+          </ul>
         </div>
-        <div class="skill-card-item">
-          <div class="skill-card-icon">🐧</div>
-          <div class="skill-card-title">Linux & Networking</div>
+
+        <!-- Skill Card 3 -->
+        <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
+          <div class="skill-card-header">
+            <div class="skill-card-icon">🐧</div>
+            <div class="skill-card-title">Linux & Networking</div>
+            <div class="dropdown-icon">▼</div>
+          </div>
+          <ul class="skill-sublist">
+            <li>Ubuntu / Kali</li>
+            <li>TCP/IP & Routing</li>
+            <li>Firewall & Packet Analysis</li>
+            <li>Command-Line Interfaces</li>
+          </ul>
         </div>
+
+        <!-- Skill Card 4 -->
+        <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
+          <div class="skill-card-header">
+            <div class="skill-card-icon">🔧</div>
+            <div class="skill-card-title">Tools & Platforms</div>
+            <div class="dropdown-icon">▼</div>
+          </div>
+          <ul class="skill-sublist">
+            <li>Burpsuite</li>
+            <li>OSINT Skills</li>
+            <li>Git & GitHub</li>
+            <li>Nmap Scanning</li>
+          </ul>
+        </div>
+
       </div>
-    </section>
+</section>
+
+
 
 
     <section id="contact" class="section">
       <h2>Contact Me</h2>
-      <form id="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+      <div class="send_email_container">
+        <h2>Contact me by email</h2>
+        <button class="send_email_btn">Send Email</button>
+        </div>
+      <div class="linkedin_container">
+        <h2>Contact me on Linkedin</h2>
+        <button class="linkedin">Linkedin</button>
+        
+        </div>
+      <div class="location_container">
+        <h2>Location: Norwich/London UK</h2>
+        <p>Avaliable for remote work</p>
+        <p>Searching for Internships for summer 2026</p>
+      </div>
     </section>
   </main>
 
   <script src="script.js"></script>
 </body>
+<footer>
+  <p> @ AidanHWood 2025 <p>
+</footer>
 </html>
