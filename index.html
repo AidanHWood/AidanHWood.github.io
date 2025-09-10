@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header + Navbar -->
   <header>
     <h1 class="site-title">Portfolio</h1>
     <nav>
@@ -21,7 +20,6 @@
     </nav>
   </header>
 
-  <!-- Sections -->
   <main>
     <section id="about" class="section">
       <h2>Hi, I'm Aidan</h2>
@@ -57,11 +55,9 @@
             </div>
 
             <div id="cards-container" class="cards-container">
-            <!-- Cards will be dynamically inserted here -->
             </div>
         </section>
 
-        <!-- Modal / Detail view for clicked card -->
        <div id="exploit-modal" class="exploit-modal" style="display: none;">
           <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -73,14 +69,12 @@
           </div>
         </div>
       <div id="cards-container" class="cards-container">
-        <!-- Cards will be dynamically inserted here -->
       </div>  
   </section>
 
    <section id="projects" class="section">
     <h2>Projects</h2> 
-      <!-- First project with video -->
-      <div class="project-with-video">
+       <div class="project-with-video">
         <div class="project-video">
           <video autoplay muted loop playsinline>
             <source src="testVid.mp4" type="video/mp4">
@@ -104,7 +98,6 @@
         </div>
       </div>
 
-        <!-- Second row: two cards side by side -->
       <div class="projects-cards-container" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%;">
       <div class="project-card-item" style="flex: 1 1 45%; max-width: 750px; height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
         <div class="project-card-description">
@@ -179,7 +172,6 @@
       <h2>Skills</h2>
       <div class="skills-cards-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
 
-        <!-- Skill Card 1 -->
         <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
           <div class="skill-card-header">
             <div class="skill-card-icon">🛡️</div>
@@ -194,7 +186,6 @@
           </ul>
         </div>
 
-        <!-- Skill Card 2 -->
         <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
           <div class="skill-card-header">
             <div class="skill-card-icon">💻</div>
@@ -209,7 +200,6 @@
           </ul>
         </div>
 
-        <!-- Skill Card 3 -->
         <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
           <div class="skill-card-header">
             <div class="skill-card-icon">🐧</div>
@@ -224,7 +214,6 @@
           </ul>
         </div>
 
-        <!-- Skill Card 4 -->
         <div class="skill-card-item" onclick="toggleSkill(this)" style="flex: 1 1 45%; max-width: 300px;">
           <div class="skill-card-header">
             <div class="skill-card-icon">🔧</div>

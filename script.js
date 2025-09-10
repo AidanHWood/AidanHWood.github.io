@@ -28,18 +28,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   let currentDate;
 
   try {
-    // Fetch the JSON file from GitHub Pages
-    const response = await fetch('./exploits.json'); // ensure exploits.json is in same folder as HTML
+    const response = await fetch('./exploits.json'); 
     if (!response.ok) throw new Error("Could not fetch JSON");
     exploitData = await response.json();
   } catch (err) {
     console.error("Error loading JSON:", err);
     cardsContainer.innerHTML = "<p style='color:red'>Failed to load exploits data.</p>";
-    return; // stop execution if JSON can't load
+    return;
   }
 
   const dates = Object.keys(exploitData).sort().reverse();
-  currentDate = dates[0]; // latest date first
+  currentDate = dates[0]; 
 
 
   const modal = document.getElementById("exploit-modal");
