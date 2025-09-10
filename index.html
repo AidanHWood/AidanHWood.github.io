@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aidan's Portfolio</title>
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <!-- Header + Navbar -->
   <header>
     <h1 class="site-title">Portfolio</h1>
     <nav>
-      <a href="#about">About Me</a>
-      <a href="#blog">Cyber Blog</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" class="nav-link">About Me</a>
+      <a href="#blog" class="nav-link">Cyber Blog</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
 
@@ -26,9 +27,9 @@
       <h2>Hi, I'm Aidan</h2>
       <p class="code-style">A developer passionate about cybersecurity and building meaningful projects.</p>
       <div class="button-row">
-        <button>Read my blog!</button>
-        <button>Contact me</button>
-        <button>Projects</button>
+        <button href="#blog" class="nav-link">Read my blog!</button>
+        <button href="#contact" class="nav-link">Contact me</button>
+        <button href="#projects"class="nav-link">Projects</button>
       </div>
        <p class="inline-text">I'm currently a second year student reading computer science<br>
         at the University of East Anglia, persuing a BSc Degree. <br>
@@ -61,17 +62,19 @@
         </section>
 
         <!-- Modal / Detail view for clicked card -->
-        <div id="exploit-modal" class="exploit-modal" style="display:none;">
-            <div class="modal-content">
+       <div id="exploit-modal" class="exploit-modal" style="display: none;">
+          <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2 id="modal-title"></h2>
             <p id="modal-description"></p>
             <p id="modal-severity"></p>
-            </div>
+            <p id="modal-details"></p>
+            <a id="modal-link" href="#" target="_blank">🔗 Read full article</a>
+          </div>
         </div>
       <div id="cards-container" class="cards-container">
         <!-- Cards will be dynamically inserted here -->
-      </div>
+      </div>  
   </section>
 
    <section id="projects" class="section">
@@ -111,7 +114,7 @@
   The user interface is created with <strong>CustomTkinter</strong>, providing a clean and intuitive GUI for adding, viewing, and managing passwords.<br><br>
   This project helped strengthen understanding of <strong>Python programming</strong>, <strong>data security practices</strong>, and GUI development.
         </div>
-        <button class="find-on-gh1">View on Github</button>
+        <a class="find-on-gh1" href="https://github.com/AidanHWood/PyPasswordManager" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
 
       <div class="project-card-item" style="flex: 1 1 45%; max-width: 750px; height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
@@ -123,7 +126,7 @@
           Developed graphs to show trends in spending patterns, as well as login/signup pages with <strong>hashed and salted passwords</strong>.
         </div>
 
-        <button class="find-on-gh1">View on Github</button>
+        <a class="find-on-gh1" href="https://github.com/AidanHWood/ThePortfolioPlanner" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
     </div>
 
@@ -246,11 +249,13 @@
       <h2>Contact Me</h2>
       <div class="send_email_container">
         <h2>Contact me by email</h2>
-        <button class="send_email_btn">Send Email</button>
+        <p>Email:  aidan.h.wood@gmail.com</p>
+        <a href="https://www.outlook.com" target="_blank" rel="noopener noreferrer">Send an Email</a>
         </div>
       <div class="linkedin_container">
         <h2>Contact me on Linkedin</h2>
-        <button class="linkedin">Linkedin</button>
+        <p>Contact me professionally</p>
+        <a href="https://www.linkedin.com/in/aidan-h-wood/" target="_blank" rel="noopener noreferrer">View on Linkedin</a>
         
         </div>
       <div class="location_container">
@@ -263,7 +268,15 @@
 
   <script src="script.js"></script>
 </body>
-<footer>
-  <p> @ AidanHWood 2025 <p>
+<footer class="footer">
+  <nav class="footer-icons">
+    <a href="https://github.com/AidanHWood" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/aidanwood" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </nav>
+  <p class="footer-credit">@ AidanHWood 2025</p>
 </footer>
 </html>

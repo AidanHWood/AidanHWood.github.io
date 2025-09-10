@@ -266,7 +266,8 @@ nav a:hover::after {
   background-color: #333333; /* light background */
   border-radius: 10px;
   padding: 12px 25px;
-  width: 250px; /* smaller width */
+  width:  400px;
+  min-height: 200px;
   cursor: pointer;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -485,16 +486,35 @@ nav a:hover::after {
   padding: 50px;
   margin-top: 3%;
 }
-
-footer{
-width: 100%;
-min-height: 50px;
-background-color: #111111;
-text-align: center;
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #111111;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-footer p {
-  padding-top: 25px;
+.footer-icons {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.footer-icons a {
+  color: red;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #0077b5; /* LinkedIn blue or any accent color */
+}
+
+.footer-credit {
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 .slideshow-container {
     position: relative;
@@ -531,6 +551,7 @@ footer p {
 
   .prev { left: -40px; }
   .next { right: -40px; }
+
 
   @media screen and (max-width: 600px) {
     .prev, .next {

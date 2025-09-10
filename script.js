@@ -41,25 +41,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dates = Object.keys(exploitData).sort().reverse();
   currentDate = dates[0]; // latest date first
 
-  // Modal setup
-  const modal = document.createElement("div");
-  modal.id = "exploit-modal";
-  modal.className = "exploit-modal";
-  modal.style.display = "none";
-  modal.innerHTML = `
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <p id="modal-severity"></p>
-    </div>
-  `;
-  document.body.appendChild(modal);
 
+  const modal = document.getElementById("exploit-modal");
   const modalTitle = modal.querySelector("#modal-title");
   const modalDescription = modal.querySelector("#modal-description");
   const modalSeverity = modal.querySelector("#modal-severity");
+  const modalDetails = modal.querySelector("#modal-details");
+  const modalLink = modal.querySelector("#modal-link");
   const closeModal = modal.querySelector(".close-modal");
+
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
 
   function renderCards(date) {
     cardsContainer.innerHTML = "";
@@ -76,9 +69,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
 
       card.addEventListener("click", () => {
+        console.log("Clicked:", exp.title);
+        
         modalTitle.textContent = exp.title;
         modalDescription.textContent = exp.description;
         modalSeverity.textContent = `Severity: ${exp.severity}`;
+        modalDetails.textContent = exp.details || "No additional details available.";
+        modalLink.href = exp.link || "#";
+        modalLink.style.display = exp.link ? "inline" : "none";
         modal.style.display = "flex";
       });
 
@@ -126,5 +124,21 @@ let currentSlide = 0;
     currentSlide = (currentSlide + n + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
   }
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      const offset = window.innerHeight / 2 - target.offsetHeight / 2;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+
 
 
