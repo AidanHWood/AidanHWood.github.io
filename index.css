@@ -285,19 +285,19 @@ nav a:hover::after {
 /* Card content */
 .card .title {
   font-weight: bold;
-  font-size: large;
+  font-size: x-large;
   margin-bottom: 6px;
   color:red;
 }
 
 .card .description {
   font-weight: bolder;
-  font-size: 14px;
+  font-size: larger;
   color: white;
 }
 
 .card .date-label {
-  font-size: 12px;
+  font-size: x-large;
   color: #666;
   margin-top: 8px;
 }
@@ -320,7 +320,7 @@ nav a:hover::after {
   background-color: #333; 
   padding: 25px;
   border-radius: 12px;
-  max-width: 400px;
+  max-width: 750px;
   width: 90%;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   text-align: center;

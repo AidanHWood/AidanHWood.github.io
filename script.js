@@ -73,7 +73,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         modalTitle.textContent = exp.title;
         modalDescription.textContent = exp.description;
         modalSeverity.textContent = `Severity: ${exp.severity}`;
-        modalDetails.textContent = exp.details || "No additional details available.";
+        modalDetails.innerHTML = (exp.details || "No additional details available.").replace(/\n/g, "<br>");
+
         modalLink.href = exp.link || "#";
         modalLink.style.display = exp.link ? "inline" : "none";
         modal.style.display = "flex";
